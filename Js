@@ -1,0 +1,50 @@
+document.addEventListener('DOMContentLoaded', function() {
+  
+    const backButton = document.getElementById('backButton');
+    const sendButton = document.getElementById('sendButton');
+    const subjectInput = document.getElementById('subject');
+    const messageTextarea = document.getElementById('message-content');
+
+    
+    if (backButton) {
+        backButton.addEventListener('click', function() {
+            
+            window.history.back();
+            console.log('Botão Voltar clicado. Tentando voltar para a página anterior.');
+        });
+    }
+
+    
+    if (sendButton) {
+        sendButton.addEventListener('click', function() {
+            
+            const subjectValue = subjectInput.value.trim();
+            const messageValue = messageTextarea.value.trim();
+
+            
+            if (subjectValue === '') {
+                alert('Por favor, preencha o campo Assunto.');
+                subjectInput.focus(); 
+                return; 
+            }
+
+            if (messageValue === '') {
+                alert('Por favor, digite sua mensagem no Campo de texto.');
+                messageTextarea.focus(); 
+                return; 
+            }
+            
+            alert('Mensagem enviada com sucesso!\n\nAssunto: ' + subjectValue + '\nMensagem: ' + messageValue.substring(0, 100) + '...');
+            console.log('Mensagem enviada:', {
+                from: document.getElementById('from').value,
+                to: document.getElementById('to').value,
+                subject: subjectValue,
+                message: messageValue
+            });
+
+            subjectInput.value = '';
+            messageTextarea.value = '';
+
+        });
+    }
+});
