@@ -1,81 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem - CaBruCa</title> 
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensagem - CaBruCa</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-        <button class="back-button" id="backButton">Voltar</button> 
-        <img src="logo.png" alt="Logo do Consórcio Brasileiro CaBruCa" class="logo">
+  <header class="header">
+    <img src="cabecalho 1.png" alt="Folha esquerda" class="leaf-left" />
+    
+    <button class="back-button">Voltar</button>
 
-        <div class="user-icon"></div>
-    </header>
+    <img src="imagem_2025-05-13_133213696-Photoroom.png" alt="Logo do Consórcio Brasileiro CaBruCa" class="logo"/>
 
-    <main class="container">
-        <section class="message-details">
-            <h1>Mensagem</h1>
-            <p>Digite sua mensagem no campo de texto ao lado</p>
-            <div class="input-group">
-                <label for="from">De:</label>
-                <input type="text" id="from"  >
-            </div>
-            <div class="input-group">
-                <label for="to">Para:</label>
-                <input type="text" id="to" >
-            </div>
-            <div class="input-group">
-                <label for="subject">Assunto:</label>
-                <input type="text" id="subject" required> </div>
-        </section>
+    <img src="cabecalho 2 esuqerda.png" alt="Folha direita" class="leaf-right" />
+    <img src="icone.png" alt="Usuário" class="user-icon" />
+  </header>
 
-        <section class="text-editor">
-            <label for="message-content" class="text-editor-label">Campo de texto</label>
-            <textarea id="message-content" class="message-textarea" required></textarea> <button class="send-button" id="sendButton">Enviar</button> </section>
-    </main>
+  <main class="main-content">
+    <section class="left-panel">
+      <h1>Mensagem</h1>
+      <p>Digite sua mensagem no campo de texto ao lado</p>
 
-    <script src="srcipt.js"></script> 
-  </body>
-</html><!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagem - CaBruCa</title> 
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <button class="back-button" id="backButton">Voltar</button> 
-        <img src="logo.png" alt="Logo do Consórcio Brasileiro CaBruCa" class="logo">
+      <form id="message-form">
+        <div class="input-group">
+          <label for="from"><strong>De:</strong></label>
+          <input type="text" id="from" placeholder="NOME DO ADMIN" required>
+        </div>
+        <div class="input-group">
+          <label for="to"><strong>Para:</strong></label>
+          <input type="text" id="to" placeholder="PROD" required>
+        </div>
+        <div class="input-group">
+          <label for="subject"><strong>Assunto:</strong></label>
+          <input type="text" id="subject" placeholder="Digite o assunto" required>
+        </div>
+    </section>
 
-        <div class="user-icon"></div>
-    </header>
+    <section class="right-panel">
+      <label for="message-content" class="text-label">Campo de texto</label>
+      <textarea id="message-content" class="text-area" placeholder="Digite sua mensagem..." required></textarea>
+      <button type="submit" class="send-button">Enviar</button>
+      </form>
+    </section>
+  </main>
 
-    <main class="container">
-        <section class="message-details">
-            <h1>Mensagem</h1>
-            <p>Digite sua mensagem no campo de texto ao lado</p>
-            <div class="input-group">
-                <label for="from">De:</label>
-                <input type="text" id="from"  >
-            </div>
-            <div class="input-group">
-                <label for="to">Para:</label>
-                <input type="text" id="to" >
-            </div>
-            <div class="input-group">
-                <label for="subject">Assunto:</label>
-                <input type="text" id="subject" required> </div>
-        </section>
-
-        <section class="text-editor">
-            <label for="message-content" class="text-editor-label">Campo de texto</label>
-            <textarea id="message-content" class="message-textarea" required></textarea> <button class="send-button" id="sendButton">Enviar</button> </section>
-    </main>
-
-    <script src="srcipt.js"></script> 
-  </body>
+  <script>
+    const form = document.getElementById('message-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Mensagem enviada com sucesso!');
+      form.reset();
+    });
+  </script>
+</body>
 </html>
