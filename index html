@@ -9,11 +9,8 @@
 <body>
   <header class="header">
     <img src="cabecalho 1.png" alt="Folha esquerda" class="leaf-left" />
-    
     <button class="back-button">Voltar</button>
-
     <img src="imagem_2025-05-13_133213696-Photoroom.png" alt="Logo do Consórcio Brasileiro CaBruCa" class="logo"/>
-
     <img src="cabecalho 2 esuqerda.png" alt="Folha direita" class="leaf-right" />
     <img src="icone.png" alt="Usuário" class="user-icon" />
   </header>
