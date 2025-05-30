@@ -1,6 +1,6 @@
 :root {
-  --primary: #009344;
-  --dark-green: #003c18;
+  --primary: #359044d7;
+  --dark-green: #075000;
   --highlight: #ff9800;
   --text-color: #ffffff;
   --input-bg: #003c18;
@@ -21,35 +21,33 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
-  background-color: #66bb6a;
+  background-color: #58a651;
   overflow: hidden;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* Folhas */
 .leaf-left {
   position: absolute;
-  top: 5;
+  top: -35px;
   left: 0;
   height: auto;
-  width: 200px; /* ajuste conforme necessário */
-  z-index: 0;
+  width: 250px;
   pointer-events: none;
   margin-left: -50px;
-  
 }
 
 .leaf-right {
   position: absolute;
-  top: 5;
+  top: -35px;
   right: 0;
   height: auto;
-  width: 200px; /* ajuste conforme necessário */
+  width: 250px;
   z-index: 0;
   pointer-events: none;
   margin-right: -50px;
 }
 
-/* Botão e Ícone */
 .back-button {
   background-color: var(--highlight);
   color: var(--text-color);
@@ -62,8 +60,9 @@ body {
 }
 
 .logo {
-  height: 100px;
+  height: 140px;
   z-index: 1;
+  max-width: 80vw;
 }
 
 .user-icon {
@@ -78,7 +77,9 @@ body {
 
 .main-content {
   display: flex;
+  flex-direction: row;
   height: calc(100vh - 110px);
+  flex-wrap: wrap;
 }
 
 .left-panel {
@@ -86,17 +87,18 @@ body {
   background-color: var(--primary);
   padding: 40px;
   box-sizing: border-box;
+  border-right: 2px solid #ffffff50;
 }
 
 .left-panel h1 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 900;
   margin-bottom: 10px;
 }
 
 .left-panel p {
-  margin-bottom: 40px;
-  font-size: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
 }
 
 .input-group {
@@ -125,7 +127,7 @@ body {
 
 .right-panel {
   width: 60%;
-  background-color: #007f3b;
+  background-color:  #359044d7;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -168,3 +170,63 @@ body {
 .send-button:hover {
   background-color: #e68a00;
 }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #ffffff50;
+  }
+
+  .send-button {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    height: auto;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .left-panel,
+  .right-panel {
+    padding: 20px;
+  }
+
+  .text-area {
+    min-height: 200px;
+  }
+
+  .send-button {
+    font-size: 18px;
+    padding: 16px;
+  }
+}
+
